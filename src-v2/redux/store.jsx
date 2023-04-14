@@ -24,7 +24,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 // const store = legacy_createStore(persistedReducer, applyMiddleware(...middleware))
 const store = configureStore({
-    reducer: rootReducer,
+    reducer: persistedReducer,
     middleware
 })
 const persistor = persistStore(store)

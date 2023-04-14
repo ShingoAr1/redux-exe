@@ -1,8 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { getDrinks } from '../middleware/api'
+
+const initialState = {
+    data: [],
+    isLoading: false,
+    error: null
+}
 
 const drinkSlice = createSlice({
     name: 'drinks',
-    initialState: [],
+    initialState,
     reducers: {
         addDrinkQty: (state, action) => {
             return state.map(drink => {
@@ -25,6 +32,15 @@ const drinkSlice = createSlice({
         setDrinks: (state, action) => {
             console.log(action)
             return action.payload
+        }
+    },
+    extraReducers: {
+        [getDrinks.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.data = action.payload
+        },
+        [getDrinks.pending]: (state) => {
+            state.isLoading = true
         }
     }
 })

@@ -2,6 +2,8 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 //action type
 export const UPDATE_MOOD = "UPDATE_MOOD";
 
+const URL = "https://gist.githubusercontent.com/andasan/4f4976c373654f73b0a465a2441c2c91/raw/1b3c99936426b59ba4a92c7afe12fc109e4dbdcd/moods.json"
+
 //action creator
 export const updateMood = (payload) => {
     return {
