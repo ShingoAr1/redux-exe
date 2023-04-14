@@ -2,8 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 // import Snack from '../components/Snack'
 import Drink from '../components/Drink'
 // import { addDrinkQty, removeDrinkQty } from "../redux/actions/drinkAction";
-// import { addDrinkQty, removeDrinkQty } from '../redux/reducers/drinkReducer'
-import { addDrinkQty, removeDrinkQty } from '../redux/slice/drinkSlice'
+import { addDrinkQty, removeDrinkQty } from '../redux/reducers/drinkReducer'
 
 const DrinkInventory = () => {
     const dispatch = useDispatch()

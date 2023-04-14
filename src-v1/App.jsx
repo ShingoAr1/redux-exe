@@ -12,6 +12,8 @@ export default function App() {
   const isDataFetched = useSelector((state) => state.isDataFetched)
   const dispatch = useDispatch()
 
+  console.log(isDataFetched)
+
   useEffect(() => {
     if (!isDataFetched) {
       dispatch(fetchData())

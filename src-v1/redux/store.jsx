@@ -7,8 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import storage from 'redux-persist/lib/storage'
 import { configureStore } from '@reduxjs/toolkit'
 
-// import { rootReducer } from './reducers'
-import { rootReducer } from './slice'
+import { rootReducer } from './reducers'
 
 let middleware = [thunk]
 if (import.meta.env.DEV) {
@@ -24,7 +23,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 // const store = legacy_createStore(persistedReducer, applyMiddleware(...middleware))
 const store = configureStore({
-    reducer: rootReducer,
+    reducer: persistedReducer,
     middleware
 })
 const persistor = persistStore(store)
