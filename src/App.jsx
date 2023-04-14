@@ -15,18 +15,18 @@ export default function App() {
   console.log(isDataFetched)
 
   useEffect(() => {
-    if (!isDataFetched){
+    if (!isDataFetched) {
       dispatch(fetchData())
     }
   }, [])
 
   return (
-    <main className="d-flex justify-content-center vw-100">
+    <main className="d-flex justify-content-center">
 
-    <div className="container-fluid">
-      <SnackInventory />
-      <DrinkInventory />
-    </div>
+      <div className="container">
+        <SnackInventory />
+        <DrinkInventory />
+      </div>
     </main>
   )
 }

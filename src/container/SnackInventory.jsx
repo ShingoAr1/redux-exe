@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import Snack from '../components/Snack'
-import { addSnackQty, removeSnackQty } from "../redux/actions/snackActions"
+// import { addSnackQty, removeSnackQty } from "../redux/actions/snackActions"
+import { addSnackQty, removeSnackQty} from '../redux/reducers/snackReducer'
 
 const SnackInventory = () => {
     const dispatch = useDispatch()

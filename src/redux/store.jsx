@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import storage from 'redux-persist/lib/storage'
+import { configureStore } from '@reduxjs/toolkit'
 
 import { rootReducer } from './reducers'
 
@@ -20,7 +21,11 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-const store = legacy_createStore(persistedReducer, applyMiddleware(...middleware))
+// const store = legacy_createStore(persistedReducer, applyMiddleware(...middleware))
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware
+})
 const persistor = persistStore(store)
 
 export const AppProvider = ({ children }) => (

@@ -250,3 +250,9 @@ To work around the nature of our beloved language, we have to use third-party li
 	]
 }
 ```
+
+---
+> *Note*:
+One part of Redux is called "useSelector()" and it basically means that when something in the app changes, like a button being clicked, this function will automatically check to see if anything needs to be updated based on that change.<br>
+If there is something that needs to be updated, the function will tell the app to redraw or "re-render" that part of the app with the new information.<br>
+And one important thing to know is that the function uses something called "strict === reference equality checks" to compare the old and new information, which just means it's really careful about checking if something has actually changed before updating it.
